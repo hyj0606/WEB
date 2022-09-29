@@ -29,7 +29,7 @@
         list.add("小丽");
         session.setAttribute("list",list);
 
-        //问题: map中的key:支持任意存储类型,但是解析只支持int和String类型
+        //问题: map中的key:支持任意存储类型,但是解析只支持Long和String类型
         Map map = new HashMap();
         map.put("a","王二");
         map.put("2","张三");
@@ -60,8 +60,7 @@
         ${pageContext.request.contextPath} <%--动态解析地址方式--%>
         ${pageContext.request.method}
     </h1>
-
-    <a href="${pageContext.request.contextPath}/test2.jsp">跳转</a>
+    <%--    <a href="${pageContext.request.contextPath}/test2.jsp">跳转</a>--%>
 
 </body>
 </html>
