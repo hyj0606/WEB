@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+<!--    将App1这个程序对外提供访问地址: -->
+    <servlet>
+        <servlet-name>app1</servlet-name>
+        <servlet-class>com.demo1.App1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>app1</servlet-name>
+        <url-pattern>/a1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>app2</servlet-name>
+        <servlet-class>com.demo1.App2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>app2</servlet-name>
+        <url-pattern>/a2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestServlet1</servlet-name>
+        <servlet-class>com.demo3.TestServlet1</servlet-class>
+<!--        局部变量-->
+        <init-param>
+            <param-name>age</param-name>
+            <param-value>20</param-value>
+        </init-param>
+        <init-param>
+            <param-name>address</param-name>
+            <param-value>合肥市</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestServlet1</servlet-name>
+        <url-pattern>/testServlet1</url-pattern>
+    </servlet-mapping>
+
+<!--    全局参数-->
+    <context-param>
+        <param-name>pno</param-name>
+        <param-value>120</param-value>
+    </context-param>
+    <context-param>
+        <param-name>pname</param-name>
+        <param-value>mr.xiaoer</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>TestServlet2</servlet-name>
+        <servlet-class>com.demo3.TestServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestServlet2</servlet-name>
+        <url-pattern>/testServlet2</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
